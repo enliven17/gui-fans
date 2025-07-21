@@ -26,16 +26,15 @@ const Inner = styled.div`
 `;
 
 const Logo = styled.div`
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  background: ${({ theme }) => theme.colors.background};
+  background: ${({ theme }) => theme.colors.memePink};
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
-  font-weight: bold;
-  color: ${({ theme }) => theme.colors.text};
+  box-shadow: 0 0 0 4px ${({ theme }) => theme.colors.accent2};
+  overflow: hidden;
 `;
 
 const Search = styled.input`
@@ -79,7 +78,7 @@ export default function TopBar() {
     <Bar>
       <Inner>
         <Logo>
-          <span>◯</span>
+          <img src="/assets/images/gui-bot.webp" width={44} height={44} alt="GUI Inu" />
         </Logo>
         <Search placeholder="#Explore" />
         <Icons>

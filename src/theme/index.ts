@@ -1,19 +1,24 @@
 const theme = {
   colors: {
-    background: "#18191A",
-    card: "#232427",
-    text: "#FFFFFF",
+    background: "linear-gradient(135deg, #1a1832 0%, #232447 100%)",
+    card: "#232447",
+    text: "#FFF7E6",
     textSecondary: "#B0B3B8",
     accent: "#FFD600",
+    accent2: "#7C3AED",
+    accent3: "#00E0FF",
     border: "#33343A",
-    input: "#242526",
+    input: "#292A2D",
     button: "#FFD600",
     buttonText: "#18191A",
-    skillBg: "#232427",
-    activityBg: "#232427",
+    skillBg: "#2B2D4A",
+    activityBg: "#232447",
+    memePink: "#FF61D2",
+    memeBlue: "#00E0FF",
+    memeGreen: "#00FFA3",
   },
   fonts: {
-    main: 'Geist, Arial, sans-serif',
+    main: 'Fredoka, Arial, sans-serif',
     mono: 'Geist Mono, monospace',
   },
   spacing: {
@@ -24,9 +29,9 @@ const theme = {
     xl: '32px',
   },
   borderRadius: {
-    sm: '8px',
-    md: '16px',
-    lg: '24px',
+    sm: '12px',
+    md: '22px',
+    lg: '32px',
   },
 };
 

@@ -1,53 +1,74 @@
 import styled from 'styled-components';
-import Image from 'next/image';
 
 const Card = styled.div`
   background: ${({ theme }) => theme.colors.card};
-  border-radius: ${({ theme }) => theme.borderRadius.md};
-  padding: 24px;
+  border-radius: ${({ theme }) => theme.borderRadius.lg};
+  padding: 28px 24px 24px 24px;
   color: ${({ theme }) => theme.colors.text};
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 32px 0 rgba(124,58,237,0.10);
+  border: 3px solid ${({ theme }) => theme.colors.memePink};
 `;
 
 const Avatar = styled.div`
-  width: 96px;
-  height: 96px;
+  width: 104px;
+  height: 104px;
   border-radius: 50%;
   overflow: hidden;
-  border: 4px solid ${({ theme }) => theme.colors.accent};
+  border: 5px solid ${({ theme }) => theme.colors.accent2};
   margin-bottom: 16px;
+  box-shadow: 0 0 0 6px ${({ theme }) => theme.colors.memeBlue};
 `;
 
 const Name = styled.h2`
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   margin: 0;
+  color: ${({ theme }) => theme.colors.accent2};
+  display: flex;
+  align-items: center;
+  gap: 8px;
 `;
 
 const Username = styled.p`
   color: ${({ theme }) => theme.colors.textSecondary};
   margin: 4px 0 12px 0;
-  font-size: 1rem;
+  font-size: 1.1rem;
 `;
 
 const Bio = styled.p`
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin-bottom: 16px;
 `;
 
+const MemeBadge = styled.div`
+  background: ${({ theme }) => theme.colors.memePink};
+  color: #fff;
+  border-radius: 16px;
+  padding: 4px 16px;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 8px 0 rgba(255,97,210,0.10);
+`;
+
 const ProfileButton = styled.button`
-  background: ${({ theme }) => theme.colors.button};
-  color: ${({ theme }) => theme.colors.buttonText};
+  background: ${({ theme }) => theme.colors.accent2};
+  color: #fff;
   border: none;
   border-radius: ${({ theme }) => theme.borderRadius.sm};
-  padding: 10px 24px;
+  padding: 12px 32px;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.1rem;
   cursor: pointer;
   margin-top: 8px;
+  box-shadow: 0 2px 12px 0 rgba(124,58,237,0.12);
+  transition: background 0.2s;
+  &:hover {
+    background: ${({ theme }) => theme.colors.memePink};
+  }
 `;
 
 const StatRow = styled.div`
@@ -61,11 +82,11 @@ const Stat = styled.div`
   text-align: center;
   flex: 1;
   color: ${({ theme }) => theme.colors.text};
-  font-size: 1rem;
+  font-size: 1.1rem;
   span {
     display: block;
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 `;
 
@@ -73,22 +94,23 @@ export default function ProfileCard() {
   return (
     <Card>
       <Avatar>
-        <img src="https://randomuser.me/api/portraits/men/32.jpg" width={96} height={96} alt="Profile" />
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" width={104} height={104} alt="Profile" />
       </Avatar>
+      <MemeBadge>🐶 Meme Lord</MemeBadge>
       <StatRow>
         <Stat>
           <span>1984</span>
-          Followers
+          Frenz
         </Stat>
         <Stat>
           <span>1002</span>
-          Following
+          Following Degens
         </Stat>
       </StatRow>
-      <Name>Elviz Dizzouza</Name>
+      <Name>Elviz Dizzouza <span>🔥</span></Name>
       <Username>@elvizoodem</Username>
-      <Bio>⭐ Hello, I&apos;m UI / UX designer. Open to the new Project ⭐</Bio>
-      <ProfileButton>My Profile</ProfileButton>
+      <Bio>⭐ WAGMI! GUI Inu SocialFi Meme Den'e hoşgeldin! ⭐</Bio>
+      <ProfileButton>My Meme Den</ProfileButton>
     </Card>
   );
 }

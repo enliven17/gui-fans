@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap');
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -17,9 +19,9 @@ body {
 }
 
 body {
-  background: #18191A;
-  color: #fff;
-  font-family: 'Geist', Arial, sans-serif;
+  background: linear-gradient(135deg, #1a1832 0%, #232447 100%);
+  color: #FFF7E6;
+  font-family: 'Fredoka', Arial, sans-serif;
   margin: 0;
   padding: 0;
   min-height: 100vh;
@@ -31,10 +33,10 @@ body {
 
 ::-webkit-scrollbar {
   width: 8px;
-  background: #232427;
+  background: #232447;
 }
 ::-webkit-scrollbar-thumb {
-  background: #33343A;
+  background: #7C3AED;
   border-radius: 8px;
 }
 

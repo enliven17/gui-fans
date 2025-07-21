@@ -1,13 +1,12 @@
 import styled from 'styled-components';
-import Image from 'next/image';
-import { FaRegHeart, FaRegComment, FaRegPaperPlane } from 'react-icons/fa';
 
 const Card = styled.div`
   background: ${({ theme }) => theme.colors.card};
   border-radius: ${({ theme }) => theme.borderRadius.md};
   padding: 20px 20px 12px 20px;
   color: ${({ theme }) => theme.colors.text};
-  margin-bottom: 24px;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 32px 0 rgba(124,58,237,0.08);
 `;
 
 const Header = styled.div`
@@ -18,10 +17,11 @@ const Header = styled.div`
 `;
 
 const Avatar = styled.div`
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   overflow: hidden;
+  border: 3px solid ${({ theme }) => theme.colors.memePink};
 `;
 
 const UserInfo = styled.div`
@@ -31,7 +31,8 @@ const UserInfo = styled.div`
 
 const Name = styled.div`
   font-weight: bold;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
+  color: ${({ theme }) => theme.colors.accent2};
 `;
 
 const Username = styled.div`
@@ -47,7 +48,7 @@ const Time = styled.span`
 
 const Content = styled.div`
   margin: 10px 0 14px 0;
-  font-size: 1rem;
+  font-size: 1.05rem;
 `;
 
 const PostImage = styled.div`
@@ -55,6 +56,7 @@ const PostImage = styled.div`
   border-radius: ${({ theme }) => theme.borderRadius.sm};
   overflow: hidden;
   margin-bottom: 12px;
+  border: 2px solid ${({ theme }) => theme.colors.memeBlue};
 `;
 
 const Actions = styled.div`
@@ -64,40 +66,76 @@ const Actions = styled.div`
   margin-bottom: 10px;
 `;
 
-const SaveButton = styled.button`
-  background: ${({ theme }) => theme.colors.button};
-  color: ${({ theme }) => theme.colors.buttonText};
+const StashButton = styled.button`
+  background: ${({ theme }) => theme.colors.memePink};
+  color: #fff;
   border: none;
   border-radius: ${({ theme }) => theme.borderRadius.sm};
-  padding: 6px 24px;
+  padding: 7px 28px;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.05rem;
   cursor: pointer;
   margin-left: auto;
+  box-shadow: 0 2px 12px 0 rgba(255,97,210,0.12);
+  transition: background 0.2s;
+  &:hover {
+    background: ${({ theme }) => theme.colors.accent2};
+  }
 `;
+
+const posts = [
+  {
+    user: 'George Jose',
+    username: '@george',
+    avatar: 'https://randomuser.me/api/portraits/men/12.jpg',
+    time: '1 hour ago',
+    text: 'When $GUI goes to the moon 🚀🌕',
+    image: 'https://i.imgur.com/8Km9tLL.jpg',
+  },
+  {
+    user: 'Meme Lord',
+    username: '@memelord',
+    avatar: 'https://randomuser.me/api/portraits/men/33.jpg',
+    time: '2 hours ago',
+    text: 'Diamond hands only 💎🙌',
+    image: 'https://i.imgur.com/2nCt3Sbl.jpg',
+  },
+  {
+    user: 'Shiba Queen',
+    username: '@shibaqueen',
+    avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
+    time: '3 hours ago',
+    text: 'WAGMI frens! 🐶🔥',
+    image: 'https://i.imgur.com/4M34hi2.png',
+  },
+];
 
 export default function PostCard() {
   return (
-    <Card>
-      <Header>
-        <Avatar>
-          <img src="https://randomuser.me/api/portraits/men/12.jpg" width={40} height={40} alt="Jhon" />
-        </Avatar>
-        <UserInfo>
-          <Name>George Jose <Time>. 1 hour ago</Time></Name>
-          <Username>@george</Username>
-        </UserInfo>
-      </Header>
-      <Content>Lorem ipsum dolor sit amet consectetur. Porttitor.</Content>
-      <PostImage>
-        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=500&q=80" width={500} height={300} alt="Post" style={{ width: '100%', height: 'auto' }} />
-      </PostImage>
-      <Actions>
-        <FaRegHeart size={22} />
-        <FaRegComment size={22} />
-        <FaRegPaperPlane size={22} />
-        <SaveButton>Save</SaveButton>
-      </Actions>
-    </Card>
+    <>
+      {posts.map((post, i) => (
+        <Card key={i}>
+          <Header>
+            <Avatar>
+              <img src={post.avatar} width={44} height={44} alt={post.user} />
+            </Avatar>
+            <UserInfo>
+              <Name>{post.user} <Time>. {post.time}</Time></Name>
+              <Username>{post.username}</Username>
+            </UserInfo>
+          </Header>
+          <Content>{post.text}</Content>
+          <PostImage>
+            <img src={post.image} width={500} height={300} alt="Post" style={{ width: '100%', height: 'auto' }} />
+          </PostImage>
+          <Actions>
+            <span style={{fontSize:'1.3rem',cursor:'pointer'}}>❤️‍🔥</span>
+            <span style={{fontSize:'1.3rem',cursor:'pointer'}}>😂</span>
+            <span style={{fontSize:'1.3rem',cursor:'pointer'}}>🚀</span>
+            <StashButton>Stash 🚀</StashButton>
+          </Actions>
+        </Card>
+      ))}
+    </>
   );
 }
