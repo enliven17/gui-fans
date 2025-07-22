@@ -54,7 +54,7 @@ const communities = [
   },
   {
     name: 'Meme Coiners',
-    img: 'https://i.imgur.com/8p0p3rT.png', // Pepe meme (imgur)
+    img: 'https://i.imgur.com/AA0WxrZ.jpeg', // Pepe meme (JPEG)
     friends: 42,
     desc: 'Shitposting 24/7 😂',
   },
