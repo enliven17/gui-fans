@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Image from 'next/image';
 
 const Container = styled.div`
   margin-top: 32px;
@@ -38,6 +37,7 @@ const Info = styled.div`
 const Name = styled.div`
   color: ${({ theme }) => theme.colors.text};
   font-size: 1rem;
+  font-weight: bold;
 `;
 
 const Friends = styled.div`
@@ -47,19 +47,34 @@ const Friends = styled.div`
 
 const communities = [
   {
-    name: 'UX Designer community',
-    img: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=64&h=64',
-    friends: 32,
+    name: 'WAGMI Degens',
+    img: 'https://i.imgur.com/4M34hi2.png',
+    friends: 69,
+    desc: 'To the moon 🚀',
   },
   {
-    name: 'Front end developers',
-    img: 'https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=facearea&w=64&h=64',
-    friends: 12,
+    name: 'Meme Coiners',
+    img: 'https://i.imgur.com/8p0p3rT.png', // Pepe meme (imgur)
+    friends: 42,
+    desc: 'Shitposting 24/7 😂',
   },
   {
-    name: 'Back end developers',
-    img: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=facearea&w=64&h=64',
-    friends: 41,
+    name: 'Diamond Hands Club',
+    img: 'https://i.imgur.com/2nCt3Sbl.jpg',
+    friends: 33,
+    desc: 'No paper hands allowed 💎',
+  },
+  {
+    name: 'Shiba Army',
+    img: 'https://assets.coingecko.com/coins/images/11939/large/shiba.png',
+    friends: 88,
+    desc: 'Woof woof 🐶',
+  },
+  {
+    name: 'HODLers United',
+    img: 'https://i.imgur.com/4M34hi2.png',
+    friends: 21,
+    desc: 'Never selling 🤲',
   },
 ];
 
@@ -75,7 +90,7 @@ export default function Communities() {
             </Avatar>
             <Info>
               <Name>{c.name}</Name>
-              <Friends>{c.friends} your friends are in</Friends>
+              <Friends>{c.friends} frens • {c.desc}</Friends>
             </Info>
           </CommunityItem>
         ))}

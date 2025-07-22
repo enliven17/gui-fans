@@ -1,16 +1,15 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { FaHome, FaBell, FaEnvelope, FaCog } from 'react-icons/fa';
-import Image from 'next/image';
 
 const Bar = styled.div`
   width: 100vw;
-  background: ${({ theme }) => theme.colors.card};
-  padding: 0;
-  height: 64px;
+  background: rgba(35,36,71,0.85);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 32px 0 rgba(124,58,237,0.10);
+  height: 72px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -25,16 +24,55 @@ const Inner = styled.div`
   padding: 0 48px;
 `;
 
+const logoGlow = keyframes`
+  0% { box-shadow: 0 0 0 0 #FFD60044, 0 0 0 0 #7C3AED44; }
+  50% { box-shadow: 0 0 16px 8px #FFD60044, 0 0 32px 16px #7C3AED44; }
+  100% { box-shadow: 0 0 0 0 #FFD60044, 0 0 0 0 #7C3AED44; }
+`;
+
+const LogoWrap = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 16px;
+`;
+
 const Logo = styled.div`
-  width: 48px;
-  height: 48px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
-  background: ${({ theme }) => theme.colors.memePink};
+  background: linear-gradient(135deg, #FFD600 0%, #7C3AED 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 0 4px ${({ theme }) => theme.colors.accent2};
+  box-shadow: 0 0 0 4px #FFD60044, 0 0 0 0 #7C3AED44;
+  animation: ${logoGlow} 2.5s infinite;
   overflow: hidden;
+  border: 3px solid #fff3;
+`;
+
+const LogoImg = styled.img`
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+`;
+
+const LogoText = styled.span`
+  font-family: 'Fredoka', Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #FFD600;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 12px #7C3AED88;
+  background: linear-gradient(90deg, #FFD600 0%, #7C3AED 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: flicker 2.5s infinite alternate;
+
+  @keyframes flicker {
+    0% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0.7; }
+  }
 `;
 
 const Search = styled.input`
@@ -43,7 +81,7 @@ const Search = styled.input`
   border-radius: 24px;
   padding: 10px 24px;
   color: ${({ theme }) => theme.colors.text};
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   width: 340px;
   margin: 0 32px;
   outline: none;
@@ -55,7 +93,7 @@ const Search = styled.input`
   }
   &:focus {
     border: 2px solid #FFD600;
-    background: #232427;
+    background: #232447;
   }
 `;
 
@@ -77,9 +115,12 @@ export default function TopBar() {
   return (
     <Bar>
       <Inner>
-        <Logo>
-          <img src="/assets/images/gui-bot.webp" width={44} height={44} alt="GUI Inu" />
-        </Logo>
+        <LogoWrap>
+          <Logo>
+            <LogoImg src="/assets/images/gui-bot.webp" alt="GUI Inu" />
+          </Logo>
+          <LogoText>GUI Fans</LogoText>
+        </LogoWrap>
         <Search placeholder="#Explore" />
         <Icons>
           <FaHome size={22} color="#FFD600" />
@@ -87,7 +128,7 @@ export default function TopBar() {
           <FaEnvelope size={22} />
           <FaCog size={22} />
           <Avatar>
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" width={36} height={36} alt="Profile" />
+            <img src="/assets/images/profile.jpeg" width={36} height={36} alt="Profile" />
           </Avatar>
         </Icons>
       </Inner>

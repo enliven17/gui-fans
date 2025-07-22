@@ -7,7 +7,6 @@ const Container = styled.div`
   padding: 22px 12px 12px 12px;
   color: ${({ theme }) => theme.colors.text};
   box-shadow: 0 2px 16px 0 rgba(124,58,237,0.08);
-  border: 1.5px solid ${({ theme }) => theme.colors.memeBlue};
 `;
 
 const Title = styled.h3`
@@ -23,12 +22,12 @@ const Title = styled.h3`
 const List = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 18px;
 `;
 
 const ActivityItem = styled.div`
   background: #1a1832;
-  border-radius: ${({ theme }) => theme.borderRadius.md};
+  border-radius: 0;
   padding: 8px 10px;
   display: flex;
   align-items: center;
@@ -107,12 +106,12 @@ const FrenBackButton = styled.button`
 `;
 
 const activities = [
-  { name: 'George Jose', time: '3 min ago', badge: 'WAGMI 🚀' },
-  { name: 'Michel', time: '3 min ago', badge: 'Diamond Hands 💎' },
-  { name: 'Cristano', time: '3 min ago', badge: 'Meme Lord 🐶' },
-  { name: 'Brahim diaz', time: '3 min ago', badge: 'Shitposter 😂' },
-  { name: 'John wick', time: '3 min ago', badge: 'Fren' },
-  { name: 'Abhilash Jose', time: '3 min ago', badge: 'HODL 🤲' },
+  { name: 'Elon Musk', time: '3 min ago', badge: 'WAGMI 🚀' },
+  { name: 'CZ Binance', time: '3 min ago', badge: 'Diamond Hands 💎' },
+  { name: 'Vitalik Buterin', time: '3 min ago', badge: 'Meme Lord 🐶' },
+  { name: 'Dogecoin Dev', time: '3 min ago', badge: 'Shitposter 😂' },
+  { name: 'Shiba Queen', time: '3 min ago', badge: 'Fren' },
+  { name: 'Pepe OG', time: '3 min ago', badge: 'HODL 🤲' },
 ];
 
 export default function RecentActivity() {

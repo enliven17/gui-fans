@@ -9,7 +9,6 @@ const Card = styled.div`
   flex-direction: column;
   align-items: center;
   box-shadow: 0 4px 32px 0 rgba(124,58,237,0.10);
-  border: 3px solid ${({ theme }) => theme.colors.memePink};
 `;
 
 const Avatar = styled.div`
@@ -94,7 +93,7 @@ export default function ProfileCard() {
   return (
     <Card>
       <Avatar>
-        <img src="https://randomuser.me/api/portraits/men/32.jpg" width={104} height={104} alt="Profile" />
+        <img src="/assets/images/profile.jpeg" width={104} height={104} alt="Profile" />
       </Avatar>
       <MemeBadge>🐶 Meme Lord</MemeBadge>
       <StatRow>
@@ -107,10 +106,10 @@ export default function ProfileCard() {
           Following Degens
         </Stat>
       </StatRow>
-      <Name>Elviz Dizzouza <span>🔥</span></Name>
-      <Username>@elvizoodem</Username>
-      <Bio>⭐ WAGMI! GUI Inu SocialFi Meme Den'e hoşgeldin! ⭐</Bio>
-      <ProfileButton>My Meme Den</ProfileButton>
+      <Name>enliven <span>🔥</span></Name>
+      <Username>@enliven17</Username>
+      <Bio>⭐ Founder of GUI Fans ⭐</Bio>
+      <ProfileButton>My GUI Page</ProfileButton>
     </Card>
   );
 }
