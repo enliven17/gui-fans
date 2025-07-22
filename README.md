@@ -1,36 +1,17 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GUI Fans
 
-## Getting Started
+## Project Summary
 
-First, run the development server:
+GUI Fans is a next-generation SocialFi platform designed for the meme coin community. Our mission is to create a vibrant, interactive, and rewarding social network where users can share, discover, and unlock exclusive meme content. The platform combines the viral culture of memes with blockchain-based incentives, allowing users to support creators, access premium posts, and participate in community-driven events—all powered by the $GUI token.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## How $GUI Functions as the Core Utility Token
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+$GUI is the backbone of the GUI Fans ecosystem. It serves multiple purposes:
+- **Content Unlocking:** Certain premium or exclusive posts are locked and can only be accessed by contributing $GUI. Once the community collectively reaches the required amount, the content is unlocked for all contributors.
+- **Tipping & Rewards:** Users can tip creators or reward high-quality content directly with $GUI, fostering a creator-first economy.
+- **Community Governance:** $GUI holders can participate in platform governance, vote on new features, and influence community guidelines.
+- **Access to Events & Perks:** Special events, meme competitions, and community perks are gated by $GUI participation.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Target Audience
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Our primary audience includes meme coin enthusiasts, crypto-native users, and Gen Z/young millennial internet culture fans. GUI Fans is ideal for those who enjoy meme culture, want to support creators, and are looking for a fun, gamified social experience with real token utility. The platform is also open to creators, artists, and community builders who want to monetize their content and engage with a passionate, crypto-savvy audience.
